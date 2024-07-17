@@ -1,0 +1,60 @@
+from reportlab.lib.pagesizes import letter
+from reportlab.pdfgen import canvas
+
+def create_pdf():
+    # Create a canvas
+    c = canvas.Canvas("Ronald_Taylor_Resume.pdf", pagesize=letter)
+    
+    # Set up the content
+    text_content = """
+    Ronald Taylor  
+    Grinnell College, Grinnell, Iowa  
+    [Your Email Address] | [Your Phone Number]  
+    LinkedIn: [Your LinkedIn Profile] | GitHub: [Your GitHub Profile]  
+
+    Skills:
+    - Programming Languages: Python, Bash, PowerShell
+    - Version Control: GitHub
+    - Project Management: Jira
+    - Directory Services: Active Directory
+    - Cloud Platforms: AWS, Azure, Google Cloud Platform (GCP)
+    - Operating Systems: Linux
+    - DevOps: Kubernetes, Ansible, Puppet, Docker, Terraform
+    - CI/CD: Jenkins, GitLab CI/CD
+    - Networking: Networking Fundamentals
+    - Security Tools: Nessus, Splunk
+    - Scripting: Bash, PowerShell
+    - Methodologies: Agile and Scrum
+
+    Certifications:
+    - AWS Certified Solutions Architect - Associate
+    - HashiCorp Certified: Terraform Associate
+    - Microsoft Certified: AZ-204 Developing Solutions for Microsoft Azure
+    - Google Cloud Practitioner
+
+    Education:
+    - Bachelor of Arts in History
+      Grinnell College, Grinnell, Iowa
+      *Expected Graduation Date: [Month Year]*
+
+    Experience:
+    *(Include relevant internship or work experience here, focusing on roles or projects related to your skills in cloud computing, DevOps, and IT infrastructure. Highlight achievements and responsibilities that showcase your abilities in Python, cloud platforms, DevOps tools, and methodologies.)*
+
+    Projects:
+    *(Highlight any significant projects, especially those demonstrating your proficiency in Python, cloud technologies, DevOps practices, or related skills. Mention GitHub repositories or links to relevant project work.)*
+
+    Additional Information:
+    *(Optional section for any additional relevant information, such as languages spoken, honors or awards, or volunteer experience.)*
+    """
+    
+    # Set up the font and size
+    c.setFont("Helvetica", 10)
+    
+    # Write the content to the PDF
+    c.drawString(50, 800, text_content)
+    
+    # Save the PDF
+    c.save()
+
+# Generate the PDF
+create_pdf()
